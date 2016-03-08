@@ -5,7 +5,7 @@ Streams tasks to different type of runners or processors.
 
 Example
 
-```
+```go
 package main
 
 import (
@@ -31,6 +31,4 @@ taskStreamer.onTaskDone(func (payload taskstreamer.Payload) {
 taskStreamer.onError(func (err error){
     //something
   })
-
-
 ```
