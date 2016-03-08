@@ -9,7 +9,8 @@ type TaskStreamer interface {
 type StreamAdapter interface {
 	Open() error
 	Close() error
-	Next() (Task, error)
+	Next() (*Task, error)
+	HasNext() bool
 }
 
 //TaskProcessor defines the interface for a task processor
