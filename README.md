@@ -10,7 +10,7 @@ package main
 
 import (
     "github.com/ottogiron/taskstreamer"
-    "github.com/ottogiron/scripttaskrunner"
+    "github.com/ottogiron/taskstreamer/processor"
   )
 
 rabbitStream := NewRabbitStream(&taskstreamer.RabbitConfig{
@@ -18,7 +18,7 @@ rabbitStream := NewRabbitStream(&taskstreamer.RabbitConfig{
   })
 
 
-scriptProcessor := processor.NewScriptProcessor("node", "script.js", "arg1", "arg2")
+scriptProcessor := processor.NewCommandProcessor("node", "script.js", "arg1", "arg2")
 
 taskStreamer := NewTaskStreamer(rabbitStream)
 taskStreamer.Register(scriptProcessor)
